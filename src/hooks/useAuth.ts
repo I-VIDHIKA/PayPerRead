@@ -20,15 +20,36 @@ export const useAuth = () => {
   // Mock MetaMask connection
   const connectMetaMask = async (): Promise<boolean> => {
     try {
-      // Simulate MetaMask connection delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      const mockAddress = '0x742d35Cc6634C0532925a3b8D05A3C7e6638e04E';
+      // Check if MetaMask is installed
+      if (!window.ethereum) {
+        throw new Error('MetaMask is not installed');
+      }
+
+      // Request account access
+      const accounts = await window.ethereum.request({
+        method: 'eth_requestAccounts',
+      });
+
+      if (!accounts || accounts.length === 0) {
+        throw new Error('No accounts found');
+      }
+
+      const address = accounts[0];
+
+      // Get ETH balance
+      const balanceWei = await window.ethereum.request({
+        method: 'eth_getBalance',
+        params: [address, 'latest'],
+      });
+
+      // Convert Wei to ETH
+      const ethBalance = parseFloat(parseInt(balanceWei, 16) / Math.pow(10, 18));
+
       const mockUser: User = {
         id: 'wallet-user',
         email: '',
         name: 'MetaMask User',
-        walletAddress: mockAddress
+        walletAddress: address
       };
 
       setAuthState({
@@ -36,14 +57,15 @@ export const useAuth = () => {
         user: mockUser,
         wallet: {
           balance: 150, // Mock INR balance
-          ethBalance: 0.05, // Mock ETH balance
+          ethBalance: parseFloat(ethBalance.toFixed(6)), // Actual ETH balance
           isConnected: true,
-          address: mockAddress
+          address: address
         }
       });
       
       return true;
     } catch (error) {
+      console.error('MetaMask connection failed:', error);
       return false;
     }
   };
