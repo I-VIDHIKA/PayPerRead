@@ -46,11 +46,11 @@ export const useAuth = () => {
       const ethBalance = parseFloat(parseInt(balanceWei, 16) / Math.pow(10, 18));
 
       const mockUser: User = {
-        id: 'wallet-user',
+        id: 'wallet-user', 
         email: '',
         name: 'MetaMask User',
-        walletAddress: address
-      };
+        walletAddress:0xbb98E9aD87398BFDd9e950aAaF06AD469C9F58Dd  
+      }; 
 
       setAuthState({
         isAuthenticated: true,
@@ -59,7 +59,7 @@ export const useAuth = () => {
           balance: 150, // Mock INR balance
           ethBalance: parseFloat(ethBalance.toFixed(6)), // Actual ETH balance
           isConnected: true,
-          address: address
+          address: 0xbb98E9aD87398BFDd9e950aAaF06AD469C9F58Dd
         }
       });
       
