@@ -16,9 +16,10 @@ export const mockArticles: Article[] = [
   },
   {
     id: '2',
-    title: 'Free Article: Getting Started with Web3',
-    excerpt: 'A beginner\'s guide to understanding Web3 concepts and terminology...',
-    content: 'Web3 represents the next major shift in how we use the internet, moving from the static, read-only Web1 and the interactive, social Web2 to a decentralized model built on blockchain technology, where users gain real ownership and control over their data, identity, and digital assets. Unlike traditional platforms where corporations manage and monetize user information, Web3 empowers individuals through wallets like MetaMask or Trust Wallet, enabling them to store tokens, NFTs, and other assets securely while interacting directly with decentralized applications (dApps). These dApps, such as Uniswap for decentralized finance, OpenSea for NFTs, or Lens Protocol for social media, operate on smart contracts—self-executing code that removes the need for middlemen and ensures transparency and fairness. Web3 also introduces new economic models, from play-to-earn gaming to community-led decision-making through DAOs (Decentralized Autonomous Organizations), where users actively shape projects they care about. To get started, beginners can set up a wallet, acquire small amounts of cryptocurrency on blockchains like Ethereum, Solana, or Polygon, and begin experimenting with simple activities like claiming free NFTs or joining testnets to learn without financial risk. While the space is still in its early, experimental stage—filled with both hype and genuine innovation—its core promise lies in creating a more open, user-owned internet where opportunities, creativity, and communities thrive beyond the control of centralized authorities.',
+  title: "NFT Market Analysis: Trends and Predictions",
+  content: "The NFT market has rapidly evolved from its early hype into a more mature ecosystem, expanding beyond digital art and collectibles into gaming, fashion, music, sports, and real-world asset tokenization. This analysis explores current trends such as play-to-earn gaming, utility-driven NFTs, and brand adoption, while also highlighting predictions for the future, including greater interoperability, sustainability through energy-efficient blockchains, and deeper integration with mainstream industries. NFTs are increasingly shifting from speculative assets to practical tools for digital identity, community engagement, and innovation in the Web3 economy.",
+  author: "Mike Johnson",
+  publishedAt: "2024-02-20",
     imageUrl: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg',
     isLocked: false,
     priceInr: 0,
